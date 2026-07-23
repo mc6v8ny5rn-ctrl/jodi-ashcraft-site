@@ -213,10 +213,27 @@
   .essay-card h3{font-family:'Fraunces',serif;font-weight:500;font-size:23px;color:var(--forest);margin-top:12px}
   .essay-card p{margin-top:14px;font-size:16px;flex:1}
   .essay-card .textlink{margin-top:24px}
-  .step-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:52px}
+  .step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
   .step{background:var(--parchment);border:1px solid rgba(43,67,48,.1);border-radius:3px;padding:34px 28px}
   .step h3{font-family:'Fraunces',serif;font-weight:500;font-size:20px;color:var(--forest)}
   .step p{margin-top:12px;font-size:15.5px}
+
+  /* ---------- speak invitation ---------- */
+  .speak{background:var(--forest);color:var(--cream)}
+  .speak-inner{max-width:1180px;margin:0 auto;padding:92px 28px;display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+  .speak .eyebrow{color:var(--sage)}
+  .speak h2{font-family:'Fraunces',serif;font-weight:400;color:var(--cream);font-size:clamp(28px,3.4vw,40px);line-height:1.14;margin-top:10px;max-width:20ch}
+  .speak p{margin-top:22px;max-width:56ch;opacity:.94}
+  .speak .btn-row{margin-top:34px}
+  .speak .btn.solid{background:var(--cream);color:var(--forest)}
+  .speak .btn.solid:hover{background:#fff}
+  .speak-aside{border-left:1px solid rgba(238,234,224,.28);padding-left:36px}
+  .speak-aside p{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:19px;line-height:1.5;opacity:.9;margin-top:0}
+  .speak-aside cite{display:block;font-family:'Karla',sans-serif;font-style:normal;font-size:12px;letter-spacing:.16em;text-transform:uppercase;opacity:.7;margin-top:18px}
+  @media (max-width:900px){
+    .speak-inner{grid-template-columns:1fr;gap:40px;padding:72px 22px}
+    .speak-aside{border-left:0;border-top:1px solid rgba(238,234,224,.28);padding-left:0;padding-top:32px}
+  }
   .rhythm{width:100%;border-collapse:collapse;margin-top:48px}
   .rhythm th{font-family:'Karla',sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--root);text-align:left;padding:12px 16px;border-bottom:1px solid rgba(43,67,48,.25)}
   .rhythm td{padding:16px;border-bottom:1px solid rgba(43,67,48,.12);font-size:16px;vertical-align:top}
@@ -274,7 +291,24 @@
       <div class="step"><h3>Follow the work</h3><p>Subscribe to Empower One&rsquo;s newsletter and watch what God is doing through local leaders.</p><a class="textlink" href="https://empower-one.org/get-involved/stay-connected/" target="_blank" rel="noopener">Subscribe</a></div>
       <div class="step"><h3>Give</h3><p>Fuel church planting, pastor training, and community transformation led from within.</p><a class="textlink" href="https://empower-one.org/give/" target="_blank" rel="noopener">Give to Empower One</a></div>
       <div class="step"><h3>Go and see</h3><p>Ask about a vision trip and meet the leaders behind the stories in the book.</p><a class="textlink" href="https://empower-one.org/take-a-trip/" target="_blank" rel="noopener">Ask About a Trip</a></div>
-      <div class="step"><h3>Host the story</h3><p>Invite Jodi to speak. One of her talks carries the Empower One story into every room that hears it.</p><a class="textlink" href="speaking.html">Invite Jodi</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="speak">
+  <div class="speak-inner">
+    <div>
+      <p class="eyebrow">For Churches and Women&rsquo;s Groups</p>
+      <h2>Bring this story to your people</h2>
+      <p>Jodi speaks to churches, women&rsquo;s ministries, conferences, and gatherings about the work in South Sudan, Sudan, and the Democratic Republic of Congo. She brings what she has seen, and she brings the women leading it there, by name and in their own words where they have given permission.</p>
+      <div class="btn-row">
+        <a class="btn solid" href="speaking.html">Invite Jodi to Speak</a>
+      </div>
+    </div>
+    <div class="speak-aside">
+      <p>&ldquo;When a woman is transformed by Christ, a generation is transformed.&rdquo;</p>
+      <cite>Annet, Empower One Africa Women&rsquo;s Ministry Leader</cite>
+      <svg class="unravel on-dark" viewBox="0 0 190 26" aria-hidden="true"><path d="M2 13 C 22 13, 34 13, 54 13 C 70 13, 74 4, 88 6 C 100 8, 96 20, 110 19 C 124 18, 126 7, 140 9 C 152 11, 150 21, 164 20 C 174 19, 180 15, 188 11"/></svg>
     </div>
   </div>
 </section>
