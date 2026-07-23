@@ -205,6 +205,10 @@
   .form-card button{font-family:'Karla',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;background:var(--forest);color:var(--cream);border:none;padding:16px 32px;border-radius:2px;margin-top:30px;cursor:pointer}
   .form-card button:hover{background:var(--forest-deep)}
   .quiet-note{font-family:'Karla',sans-serif;font-size:13px;color:var(--root);margin-top:14px}
+  .form-thanks{background:var(--parchment);border:1px solid rgba(43,67,48,.12);border-radius:3px;padding:56px 44px;max-width:680px;margin:56px auto 0;font-size:18px}
+  .form-thanks p{margin:0}
+  .form-thanks .retry{font-family:'Karla',sans-serif;font-size:13px;color:var(--root);margin-top:12px}
+  .form-thanks .retry a{color:var(--forest)}
   .gallery3{max-width:1180px;margin:0 auto;padding:24px 28px 72px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   .gallery3 figure{border-radius:3px;overflow:hidden}
   .gallery3 img{width:100%;aspect-ratio:4/5;object-fit:cover}
@@ -294,7 +298,7 @@
     <h2 class="display" style="font-size:clamp(28px,3.2vw,38px);margin-top:8px">Invite Jodi to your event</h2>
     <p style="margin-top:16px">Now scheduling for spring 2027. Share a few details and Jodi will be in touch within a week.</p>
   </div>
-  <form class="form-card" action="https://formspree.io/f/xvzewggj" method="POST">
+  <form class="form-card" id="speaking-form" action="https://formspree.io/f/xvzewggj" method="POST">
     <input type="hidden" name="_subject" value="Speaking inquiry from jodi-ashcraft.com">
     <label for="s-name">Your name</label><input id="s-name" name="name" type="text" required>
     <label for="s-org">Church or organization</label><input id="s-org" name="organization" type="text">
@@ -306,6 +310,9 @@
     <button type="submit">Send Inquiry</button>
     <p class="quiet-note">Inquiries go straight to Jodi&rsquo;s speaking inbox.</p>
   </form>
+  <div class="form-thanks" id="speaking-thanks" hidden>
+    <p>Thank you. Your note is on its way to Jodi, and she will be in touch soon.</p>
+  </div>
 </section>
 
 </main>
@@ -344,4 +351,40 @@
     <span><em>This Sacred Unraveling</em> &middot; Streamline Books &middot; Fall 2026</span>
   </div>
 </footer>
+<script>
+(function () {
+  var form   = document.getElementById('speaking-form');
+  var thanks = document.getElementById('speaking-thanks');
+  if (!form || !thanks) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var button = form.querySelector('button[type="submit"]');
+    var label  = button ? button.textContent : '';
+    if (button) { button.disabled = true; button.textContent = 'Sending'; }
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function (res) {
+      if (!res.ok) throw new Error('Formspree returned ' + res.status);
+      form.hidden = true;
+      thanks.hidden = false;
+      thanks.setAttribute('tabindex', '-1');
+      thanks.focus();
+      thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    })
+    .catch(function () {
+      if (button) { button.disabled = false; button.textContent = label; }
+      var note = form.querySelector('.quiet-note');
+      if (note) {
+        note.innerHTML = 'That did not send. Please try again, or email ' +
+          '<a href="mailto:speaking@jodi-ashcraft.com">speaking@jodi-ashcraft.com</a>.';
+      }
+    });
+  });
+})();
+</script>
 </body></html>
