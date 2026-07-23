@@ -30,7 +30,7 @@
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{background:var(--cream);color:var(--ink);font-family:'Lora',Georgia,serif;font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
-  img{display:block;max-width:100%}
+  img{display:block;max-width:100%;height:auto}
   a{color:inherit}
 
   .eyebrow{font-family:'Karla',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--root);font-weight:600}
@@ -65,7 +65,7 @@
   .btn.line{border:1px solid var(--forest);color:var(--forest)}
   .btn.line:hover{background:var(--forest);color:var(--cream)}
   .hero-figure{position:relative;margin:0;height:100%;min-height:640px}
-  .hero-figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%}
+  .hero-figure img{position:absolute;inset:0;width:100%;height:100%!important;object-fit:cover;object-position:center 18%}
 
   /* ---------- book band ---------- */
   .band{background:var(--forest);color:var(--cream)}
@@ -86,7 +86,7 @@
   /* ---------- about teaser ---------- */
   .about{max-width:1180px;margin:0 auto;padding:100px 28px;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
   .about-img{border-radius:3px;overflow:hidden}
-  .about-img img{aspect-ratio:4/3.4;object-fit:cover;width:100%}
+  .about-img img{width:100%;height:auto;aspect-ratio:4/4.6;object-fit:cover}
   .about-img figcaption{font-family:'Karla',sans-serif;font-size:12px;letter-spacing:.08em;color:var(--root);margin-top:12px}
   .about h2{font-size:clamp(30px,3.4vw,42px)}
   .about p{margin-top:22px;max-width:54ch}
@@ -110,7 +110,7 @@
 
   /* ---------- empower one ---------- */
   .field{position:relative;color:var(--cream)}
-  .field img.bg{width:100%;height:640px;object-fit:cover;object-position:center 35%}
+  .field img.bg{width:100%;height:640px!important;object-fit:cover;object-position:center 35%}
   .field .scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(34,54,38,.92) 0%,rgba(34,54,38,.55) 45%,rgba(34,54,38,.18) 100%)}
   .field-copy{position:absolute;left:0;right:0;bottom:0;max-width:1180px;margin:0 auto;padding:0 28px 76px}
   .field h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(30px,3.6vw,44px);color:var(--cream);max-width:16ch;line-height:1.15}
@@ -161,16 +161,28 @@
     .nav-links{display:none}
     .menu-note{display:block;font-family:'Karla',sans-serif;font-size:11px;letter-spacing:.12em;color:var(--root)}
     .hero{grid-template-columns:1fr}
-    .hero-text{padding:56px 22px 48px;justify-self:start}
-    .hero-figure{min-height:70vw}
-    .band-inner{grid-template-columns:1fr;padding:72px 22px;gap:52px}
-    .cover-slot{max-width:300px;margin:0 auto}
-    .about{grid-template-columns:1fr;padding:76px 22px;gap:44px}
-    .card-grid{grid-template-columns:1fr}
-    .field img.bg{height:560px}
-    .sub-form{flex-direction:column}
-    .sub-form input{border-right:1px solid var(--forest);border-radius:2px}
-    .sub-form button{border-radius:2px;margin-top:10px}
+    .hero-text{padding:52px 22px 44px;justify-self:start;max-width:none}
+    .hero-figure{min-height:0;height:auto;aspect-ratio:4/5}
+    .band-inner{grid-template-columns:1fr;padding:64px 22px;gap:44px}
+    .cover-slot{max-width:280px;margin:0 auto}
+    .about{grid-template-columns:1fr;padding:64px 22px;gap:36px}
+    .about-img img{aspect-ratio:4/3.6}
+    .substack{padding:72px 22px}
+    .embed-wrap{margin-top:30px}
+    /* photo band stacks instead of overlaying, so type never crowds the image */
+    .field{background:var(--forest-deep)}
+    .field img.bg{height:auto!important;aspect-ratio:4/3;object-position:center 40%}
+    .field .scrim{display:none}
+    .field-copy{position:static;padding:34px 22px 48px;max-width:none}
+    .field h2{max-width:none}
+  }
+  @media (max-width:430px){
+    .hero-figure{aspect-ratio:1/1}
+    .hero-text{padding:44px 20px 38px}
+    .band-inner,.about{padding-left:20px;padding-right:20px}
+    .field-copy{padding:30px 20px 42px}
+    .cover-slot{max-width:240px;padding:26px 20px}
+    .cover-slot .cs-title{font-size:23px}
   }
 </style>
 </head>
