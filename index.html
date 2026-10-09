@@ -76,11 +76,16 @@
   .cover-slot .cs-sub{font-family:'Fraunces',serif;font-style:italic;font-weight:300;color:var(--forest);opacity:.75;text-align:center;font-size:14.5px;margin-top:10px}
   .cover-slot svg{margin:0 auto}
   .cover-slot .cs-note{font-family:'Karla',sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--root);text-align:center;border:1px dashed var(--root);padding:8px;border-radius:2px}
+  .cover-real{margin:0}
+  .cover-real img{width:100%;height:auto;border-radius:3px;box-shadow:0 30px 60px rgba(0,0,0,.4)}
+  .book-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+  .btn.ghost{border:1px solid var(--cream);color:var(--cream)}
+  .btn.ghost:hover{background:var(--cream);color:var(--forest)}
   .band h2{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(32px,3.6vw,44px);color:var(--cream);line-height:1.15}
   .band .eyebrow{color:var(--sage)}
   .band p{margin-top:22px;max-width:58ch;opacity:.92}
   .band .hebrew{font-family:'Fraunces',serif;font-style:italic;color:var(--sage)}
-  .band .btn.light{background:var(--cream);color:var(--forest);margin-top:34px;display:inline-block}
+  .band .btn.light{background:var(--cream);color:var(--forest);display:inline-block}
   .band .btn.light:hover{background:#fff}
 
   /* ---------- about teaser ---------- */
@@ -230,25 +235,18 @@
 <!-- BOOK -->
 <section class="band" id="book">
   <div class="band-inner">
-    <div class="cover-slot">
-      <p class="cs-top">Streamline Books</p>
-      <div>
-        <p class="cs-title">This Sacred Unraveling</p>
-        <p class="cs-sub">A Holy Undoing That Makes You Whole</p>
-        <svg class="unravel" viewBox="0 0 190 26" aria-hidden="true" style="margin-top:20px">
-          <path d="M0,13 C40,13 70,13 95,13 C112,13 122,10 138,7 C154,4 168,3 186,2"/>
-          <path d="M95,13 C114,13 126,14 142,17 C158,20 170,22 186,24"/>
-          <path d="M95,13 C116,13 132,12 148,12 C162,12 174,13 188,13"/>
-        </svg>
-      </div>
-      <p class="cs-note">Coming Fall 2026</p>
-    </div>
+    <figure class="cover-real">
+        <img src="images/index-book-cover.jpg" alt="This Sacred Unraveling by Jodi Ashcraft, cover showing a pen-and-ink tree with unraveling roots" width="464" height="730">
+      </figure>
     <div>
       <p class="eyebrow">The Book</p>
       <h2>Ten chapters, each anchored by an ancient Hebrew word. One gentler, truer way to live your faith.</h2>
       <p>This is a book for the one who kept every plate spinning until the spinning became her whole life. Through Scripture, story, and the ancient Hebrew words that shaped it, from <span class="hebrew">tohu v&rsquo;vohu</span> to <span class="hebrew">tikkun olam</span>, Jodi walks through fear, shame, and unbelief toward a faith that breathes.</p>
       <p>God does not waste the unraveling. What loosens can become the very place where He reveals what is true, what can be released, and what He means to form next.</p>
-      <a class="btn light" href="book.html">Explore the Book</a>
+      <div class="book-cta">
+        <a class="btn light" href="https://a.co/d/04G7E1f3" target="_blank" rel="noopener">Order on Amazon</a>
+        <a class="btn ghost" href="book.html">Explore the Book</a>
+      </div>
     </div>
   </div>
 </section>
